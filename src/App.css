@@ -5,3 +5,57 @@
 body {
   min-height: 100vh;
 }
+
+@keyframes textChange {
+  0% {
+    font-family: 'Inter';
+  }
+  10% {
+    font-family: 'Times New Roman';
+  }
+  20% {
+    font-family: 'Roboto';
+  }
+  30% {
+    font-family: 'Arial';
+  }
+  50% {
+    font-family: 'Tahoma';
+  }
+  60% {
+    font-family: '-apple-system';
+  }
+  70% {
+    font-family: 'sans-serif';
+  }
+  80% {
+    font-family: 'Inter';
+  }
+  90% {
+    font-family: 'BlinkMacSystemFont';
+  }
+}
+
+@keyframes opacityChange {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  99% {
+    opacity: 1;
+  }
+}
+
+.textChangeAnim {
+  animation-name: textChange;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+
+.changeColorAnim {
+  animation-name: opacityChange;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}

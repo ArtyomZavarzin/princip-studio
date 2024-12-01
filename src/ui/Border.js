@@ -3,6 +3,7 @@ export const Border = ({ height = 12, side = 'left', ...other }) => {
   return (
     <>
       <Box
+        className='changeColorAnim'
         sx={{
           width: '100%',
           height: height + 'px',

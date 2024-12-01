@@ -37,7 +37,7 @@ export const MainPage = ({}) => {
           className='anim_cont_1'
         >
           <Grid size={{ md: 7 }}>
-            <Typography variant='h3' className='anim_1'>
+            <Typography variant='h3' className='textChangeAnim'>
               Сайты и брендинг для B2B, B2C продуктов by PRINCEP STUDIO
             </Typography>
           </Grid>

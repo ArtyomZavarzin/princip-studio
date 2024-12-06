@@ -55,7 +55,42 @@ body {
 }
 
 .changeColorAnim {
-  animation-name: opacityChange;
+  /* animation-name: opacityChange; */
   animation-duration: 5s;
   animation-iteration-count: infinite;
+  /* background: linear-gradient(45deg, #865eff, transparent); */
+  background: linear-gradient(90deg, #865eff, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+.changeColorAnimRound {
+  background: linear-gradient(180deg, rgba(172, 9, 9, 1), #e73c7e, #865eff);
+  background-size: 300% 300%;
+  animation: gradient2 10s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient2 {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
 }

@@ -8,6 +8,7 @@ import case4 from '../assets/case4.png';
 import { ReactComponent as Case5 } from '../assets/case5.svg';
 import { OrderBtn } from './OrderBtn';
 import { useEffect } from 'react';
+import { ContentContainer } from '../ui/ContentContainer';
 
 const PageContainer = styled(Box)(({}) => ({
   marginTop: '100px',
@@ -20,7 +21,7 @@ export const ProjectsPage = ({}) => {
   }, []);
   return (
     <PageContainer>
-      <Container>
+      <ContentContainer>
         <Grid container>
           <Grid size={{ md: 6 }}>
             <Typography variant='h3' fontWeight='300'>
@@ -88,7 +89,7 @@ export const ProjectsPage = ({}) => {
         <Box mt={16} mb={6} display='flex' justifyContent='center'>
           <OrderBtn large={true} />
         </Box>
-      </Container>
+      </ContentContainer>
     </PageContainer>
   );
 };

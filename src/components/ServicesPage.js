@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid2';
 import { Border } from '../ui/Border';
 import { OrderBtn } from './OrderBtn';
 import { useEffect } from 'react';
+import { ContentContainer } from '../ui/ContentContainer';
 
 const PageContainer = styled(Box)(({}) => ({
   marginTop: '100px',
@@ -16,13 +17,17 @@ export const ServicesPage = ({}) => {
   }, []);
   return (
     <PageContainer>
-      <Container>
+      <ContentContainer>
         <Typography variant='h3' mb={9}>
           Princep studio - лучшие в своем сегменте
         </Typography>
-        <Grid container alignItems='center' spacing={4}>
+        <Grid container alignItems='center' spacing={10}>
           <Grid size={{ xs: 12, md: 6 }}>
-            <Border side='rigth' transform='translateX(-100px)' />
+            <Border
+              side='rigth'
+              transform='translateX(-200px) scaleX(-1)'
+              height={22}
+            />
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
             <Typography fontSize='1.5rem'>
@@ -62,11 +67,12 @@ export const ServicesPage = ({}) => {
                   <Grid size={{ xs: 6 }}>
                     <Typography fontSize='1.2rem'>170 000 руб</Typography>
                     <Box
+                      className='changeColorAnim'
                       sx={{
                         marginTop: '20px',
                         width: '100vw',
                         height: '12px',
-                        backgroundColor: '#865EFF',
+                        // backgroundColor: '#865EFF',
                       }}
                     ></Box>
                   </Grid>
@@ -101,11 +107,12 @@ export const ServicesPage = ({}) => {
                   <Grid size={{ xs: 6 }}>
                     <Typography fontSize='1.2rem'>130 000 руб</Typography>
                     <Box
+                      className='changeColorAnim'
                       sx={{
                         marginTop: '20px',
                         width: '100vw',
                         height: '12px',
-                        backgroundColor: '#865EFF',
+                        // backgroundColor: '#865EFF',
                       }}
                     ></Box>
                   </Grid>
@@ -114,7 +121,7 @@ export const ServicesPage = ({}) => {
             </Grid>
           </Grid>
         </Grid>
-      </Container>
+      </ContentContainer>
     </PageContainer>
   );
 };

@@ -4,6 +4,7 @@ import { ReactComponent as LogoSvg } from '../assets/logo.svg';
 import { useNavigate } from 'react-router';
 
 const HeaderContainer = styled(Box)(({ theme }) => ({
+  zIndex: '50',
   paddingTop: '24px',
   paddingBottom: '24px',
   paddingLeft: '16px',

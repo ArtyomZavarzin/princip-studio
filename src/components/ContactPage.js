@@ -2,6 +2,7 @@ import { Box, Container, styled } from '@mui/system';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid2';
 import { useEffect } from 'react';
+import { ContentContainer } from '../ui/ContentContainer';
 
 const PageContainer = styled(Box)(({}) => ({
   marginTop: '100px',
@@ -14,7 +15,7 @@ export const ContactPage = ({}) => {
   }, []);
   return (
     <PageContainer>
-      <Container>
+      <ContentContainer>
         <Grid container>
           <Grid size={{ xs: 12, md: 6 }}>
             <Typography variant='h3' fontWeight='300'>
@@ -28,7 +29,7 @@ export const ContactPage = ({}) => {
             </Typography>
           </Grid>
         </Grid>
-      </Container>
+      </ContentContainer>
     </PageContainer>
   );
 };

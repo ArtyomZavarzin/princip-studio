@@ -11,8 +11,8 @@ const HeaderContainer = styled(Box)(({ theme }) => ({
   paddingRight: '16px',
 
   [theme.breakpoints.up('md')]: {
-    paddingLeft: '50px',
-    paddingRight: '50px',
+    paddingLeft: '100px',
+    paddingRight: '100px',
   },
 
   '& .logo-line': {
@@ -56,7 +56,7 @@ const Header = ({ withLine = false }) => {
         <Grid size={{ xs: 12, sm: 'auto' }}>
           <Grid
             container
-            spacing={7}
+            spacing={{ xs: 7, md: 14 }}
             justifyContent={{ xs: 'space-around', sm: 'start' }}
           >
             <Grid item>

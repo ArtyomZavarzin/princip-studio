@@ -20,7 +20,7 @@ export const ContentContainer = styled(Box)(({ theme }) => ({
   },
 
   [theme.breakpoints.up('xl')]: {
-    maxWidth: '1400px',
+    maxWidth: '1300px',
   },
 
   //   [theme.breakpoints.up('md')]: {

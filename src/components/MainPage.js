@@ -40,7 +40,7 @@ export const MainPage = ({}) => {
       >
         <Grid
           container
-          spacing={5}
+          spacing={{ xs: 5, lg: 30 }}
           alignItems='center'
           justifyContent='space-between'
           mb={4}
@@ -52,7 +52,7 @@ export const MainPage = ({}) => {
             </Typography>
           </Grid>
           <Grid size={{ xs: 12, md: 5 }}>
-            <Border />
+            <Border height='18' />
           </Grid>
         </Grid>
         <OrderBtn />
@@ -69,7 +69,12 @@ export const MainPage = ({}) => {
         <ContentContainer>
           <Typography
             variant='h3'
-            sx={{ textAlign: { xs: 'start', md: 'end' } }}
+            sx={{
+              textAlign: { xs: 'start', md: 'end' },
+              width: { xs: '100%', md: '80%' },
+              marginLeft: 'auto',
+              marginRight: 'auto',
+            }}
           >
             Princep studio - оптимальное решение для вашего бизнеса
           </Typography>

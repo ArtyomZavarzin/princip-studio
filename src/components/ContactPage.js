@@ -21,7 +21,14 @@ export const ContactPage = ({}) => {
             <Typography variant='h3' fontWeight='300'>
               Контакты
             </Typography>
-            <Typography fontSize='1.7rem' mt={6}>
+            <Typography
+              sx={{ cursor: 'pointer' }}
+              fontSize='1.7rem'
+              mt={6}
+              onClick={() =>
+                window.open('https://t.me/princepstudio', '_blank').focus()
+              }
+            >
               Наш телеграм канал
             </Typography>
             <Typography fontSize='1.7rem' mt={9}>

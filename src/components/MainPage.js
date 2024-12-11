@@ -199,7 +199,10 @@ export const MainPage = ({ fromTemplate }) => {
           }}
         />
       </Box>
-      <Box pt={'160px'} sx={{ position: 'relative', scrollSnapAlign: 'start' }}>
+      <Box
+        pt={{ sx: '40px', md: '160px' }}
+        sx={{ position: 'relative', scrollSnapAlign: 'start' }}
+      >
         <ContentContainer>
           <Grid container>
             <Grid size={{ xs: 12, md: 6 }}>

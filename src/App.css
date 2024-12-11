@@ -1,3 +1,7 @@
+:root {
+  --app-height: 100%;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -8,6 +12,7 @@ html {
 
 body {
   min-height: 100vh;
+  min-height: var(--app-height);
 }
 
 @keyframes textChange {

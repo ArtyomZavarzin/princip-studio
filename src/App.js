@@ -6,7 +6,7 @@ import { ProjectsPage } from './components/ProjectsPage';
 import { createTheme, ThemeProvider } from '@mui/material';
 import { ContactPage } from './components/ContactPage';
 import { ServicesPage } from './components/ServicesPage';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const theme = createTheme({
   components: {
@@ -41,6 +41,15 @@ const theme = createTheme({
 
 function App() {
   const [fromTemplate, setFromTemplate] = useState(false);
+  useEffect(() => {
+    const appHeight = () => {
+      const doc = document.documentElement;
+      doc.style.setProperty('--app-height', `${window.innerHeight}px`);
+    };
+    window.addEventListener('resize', appHeight);
+    appHeight();
+    return () => window.removeEventListener('resize', appHeight);
+  }, []);
   return (
     <>
       <ThemeProvider theme={theme}>

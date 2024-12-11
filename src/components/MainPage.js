@@ -12,6 +12,7 @@ const PageContainer = styled(Box)(({ theme }) => ({
   overflow: 'hidden',
   overflowY: 'scroll',
   height: '100vh',
+  minHeight: '-webkit-fill-available',
   'scroll-snap-type': 'y mandatory',
   scrollBehavior: 'smooth',
 }));

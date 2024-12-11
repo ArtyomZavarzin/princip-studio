@@ -6,7 +6,7 @@ import { useSpring, animated } from 'react-spring';
 
 const HeaderContainer = styled(Box)(({ theme, withLine }) => ({
   zIndex: '50',
-  paddingTop: withLine ? '60px' : '24px',
+  paddingTop: '24px',
   paddingBottom: '24px',
   paddingLeft: '16px',
   paddingRight: '16px',
@@ -14,6 +14,7 @@ const HeaderContainer = styled(Box)(({ theme, withLine }) => ({
   [theme.breakpoints.up('md')]: {
     paddingLeft: '100px',
     paddingRight: '100px',
+    paddingTop: withLine ? '60px' : '24px',
   },
 
   '& .logo-line': {

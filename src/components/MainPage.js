@@ -4,66 +4,66 @@ import Grid from '@mui/material/Grid2';
 import { Border } from '../ui/Border';
 import { Round } from '../ui/Round';
 import { OrderBtn } from './OrderBtn';
-import { useEffect, useLayoutEffect } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { ContentContainer } from '../ui/ContentContainer';
-
-gsap.registerPlugin(ScrollTrigger);
+import Header from './Header';
 
 const PageContainer = styled(Box)(({ theme }) => ({
-  marginTop: '-136px',
   overflow: 'hidden',
-
-  [theme.breakpoints.up('md')]: {
-    marginTop: '-72px',
-  },
+  overflowY: 'scroll',
+  height: '100vh',
+  'scroll-snap-type': 'y mandatory',
+  scrollBehavior: 'smooth',
 }));
 
-export const MainPage = ({}) => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  useLayoutEffect(() => {}, []);
+export const MainPage = ({ fromTemplate }) => {
   return (
     <PageContainer>
-      <ContentContainer
-        // maxWidth={'1600px'}
+      <Box
         sx={{
-          minHeight: '100vh',
+          scrollSnapAlign: 'start',
           display: 'flex',
-          // alignItems: 'center',
-          justifyContent: 'center',
           flexDirection: 'column',
+          minHeight: '100vh',
         }}
       >
-        <Grid
-          container
-          spacing={{ xs: 5, lg: 30 }}
-          alignItems='center'
-          justifyContent='space-between'
-          mb={4}
-          className='anim_cont_1'
+        <Header withLine={true} anim={!fromTemplate}></Header>
+        <ContentContainer
+          sx={{
+            flexGrow: '1',
+            display: 'flex',
+            justifyContent: 'center',
+            flexDirection: 'column',
+          }}
         >
-          <Grid size={{ md: 7 }}>
-            <Typography variant='h3' className='textChangeAnim'>
-              Сайты и брендинг для B2B, B2C продуктов by PRINCEP STUDIO
-            </Typography>
+          <Grid
+            container
+            spacing={{ xs: 5, lg: 30 }}
+            alignItems='center'
+            justifyContent='space-between'
+            mb={4}
+            className='anim_cont_1'
+          >
+            <Grid size={{ md: 7 }}>
+              <Typography variant='h3' className='textChangeAnim'>
+                Сайты и брендинг для B2B, B2C продуктов by PRINCEP STUDIO
+              </Typography>
+            </Grid>
+            <Grid size={{ xs: 12, md: 5 }}>
+              <Border height='18' />
+            </Grid>
           </Grid>
-          <Grid size={{ xs: 12, md: 5 }}>
-            <Border height='18' />
-          </Grid>
-        </Grid>
-        <OrderBtn />
-      </ContentContainer>
+          <OrderBtn />
+        </ContentContainer>
+      </Box>
+
       <Box
         sx={{
           minHeight: '100vh',
           display: 'flex',
-          // alignItems: 'center',
           justifyContent: 'center',
           flexDirection: 'column',
+          scrollSnapAlign: 'start',
         }}
       >
         <ContentContainer>
@@ -123,135 +123,154 @@ export const MainPage = ({}) => {
       </Box>
       <Box
         sx={{
-          position: 'relative',
+          scrollSnapAlign: 'start',
         }}
       >
-        <ContentContainer
+        <Box
           sx={{
-            minHeight: '800px',
-            display: 'flex',
-            justifyContent: 'center',
-            flexDirection: 'column',
+            position: 'relative',
           }}
         >
-          <Grid
-            container
-            spacing={4}
-            alignItems='center'
-            sx={{ width: '100%' }}
+          <ContentContainer
+            sx={{
+              minHeight: '800px',
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column',
+            }}
           >
-            <Grid size={{ xs: 12, md: 6 }}>
-              <Typography variant='h2' textAlign='center' fontWeight={400}>
-                Наши сайты для:
-              </Typography>
+            <Grid
+              container
+              spacing={4}
+              alignItems='center'
+              sx={{ width: '100%' }}
+            >
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Typography variant='h2' textAlign='center' fontWeight={400}>
+                  Наши сайты для:
+                </Typography>
+              </Grid>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Typography
+                  sx={{ color: '#6D6D6D', fontSize: '2rem' }}
+                  textAlign='center'
+                >
+                  логистики
+                </Typography>
+                <Typography
+                  sx={{ color: '#6D6D6D', fontSize: '2.4rem' }}
+                  textAlign='center'
+                >
+                  промышленности
+                </Typography>
+                <Typography variant='h2' textAlign='center' fontWeight={400}>
+                  производств
+                </Typography>
+                <Typography
+                  sx={{ color: '#6D6D6D', fontSize: '2.4rem' }}
+                  textAlign='center'
+                >
+                  e - commerce
+                </Typography>
+                <Typography
+                  sx={{ color: '#6D6D6D', fontSize: '2rem' }}
+                  textAlign='center'
+                >
+                  общепита
+                </Typography>
+              </Grid>
             </Grid>
-            <Grid size={{ xs: 12, md: 6 }}>
-              <Typography
-                sx={{ color: '#6D6D6D', fontSize: '2rem' }}
-                textAlign='center'
-              >
-                логистики
-              </Typography>
-              <Typography
-                sx={{ color: '#6D6D6D', fontSize: '2.4rem' }}
-                textAlign='center'
-              >
-                промышленности
-              </Typography>
-              <Typography variant='h2' textAlign='center' fontWeight={400}>
-                производств
-              </Typography>
-              <Typography
-                sx={{ color: '#6D6D6D', fontSize: '2.4rem' }}
-                textAlign='center'
-              >
-                e - commerce
-              </Typography>
-              <Typography
-                sx={{ color: '#6D6D6D', fontSize: '2rem' }}
-                textAlign='center'
-              >
-                общепита
-              </Typography>
+          </ContentContainer>
+          <Round
+            className='round-animation'
+            deg={180}
+            sx={{
+              position: 'absolute',
+              top: 0,
+              left: { xs: '-200px', sm: '-300px', md: '-400px' },
+            }}
+          />
+          <Round
+            className='round-animation'
+            sx={{
+              position: 'absolute',
+              bottom: 0,
+              right: { xs: '-200px', sm: '-300px', md: '-400px' },
+            }}
+          />
+        </Box>
+        <Box mt={'160px'} sx={{ position: 'relative' }}>
+          <ContentContainer>
+            <Grid container>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Typography fontSize='1.7rem' fontWeight='bold'>
+                  B2B сайт - особая философия
+                </Typography>
+                <Typography fontSize='1.5rem' mt={4}>
+                  Визуал и ощущения с которым сталкивается ваш потенциальный
+                  потребитель или партнёр должен вызывать особенные эмоции
+                  <br />
+                  <br />
+                  При всей серьёзности b2b сегмента, для заказчика вы должны
+                  восприниматься актуальной и современной компанией
+                </Typography>
+              </Grid>
             </Grid>
-          </Grid>
-        </ContentContainer>
-        <Round
-          deg={180}
-          sx={{
-            position: 'absolute',
-            top: 0,
-            left: { xs: '-300px', md: '-400px' },
-          }}
-        />
-        <Round
-          sx={{
-            position: 'absolute',
-            bottom: 0,
-            right: { xs: '-300px', md: '-400px' },
-          }}
-        />
-      </Box>
 
-      <Box mt={'160px'} sx={{ position: 'relative' }}>
-        <ContentContainer>
-          <Grid container>
-            <Grid size={{ xs: 12, md: 6 }}>
-              <Typography fontSize='1.7rem' fontWeight='bold'>
-                B2B сайт - особая философия
-              </Typography>
-              <Typography fontSize='1.5rem' mt={4}>
-                Визуал и ощущения с которым сталкивается ваш потенциальный
-                потребитель или партнёр должен вызывать особенные эмоции
-                <br />
-                <br />
-                При всей серьёзности b2b сегмента, для заказчика вы должны
-                восприниматься актуальной и современной компанией
-              </Typography>
-            </Grid>
-          </Grid>
+            <Grid
+              container
+              justifyContent='end'
+              sx={{ mt: { xs: '100px', md: '500px' }, pb: '200px' }}
+            >
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Typography fontSize='1.7rem' fontWeight='bold'>
+                  B2С сайт - юзер экспириенс
+                </Typography>
+                <Typography fontSize='1.5rem' mt={4}>
+                  Философия вашего бренда должная отражаться в каждом эелементе
+                  вашего сайта, ваши покупатели хотят притронутся к глубокому
+                  миру вашего продукта.
+                  <br />
+                  <br />
+                  При переносе вашей философии в сайт, важно следить за
+                  удобством пользования того, что создали
+                </Typography>
 
-          <Grid
-            container
-            justifyContent='end'
-            sx={{ mt: { xs: '100px', md: '500px' }, pb: '200px' }}
-          >
-            <Grid size={{ xs: 12, md: 6 }}>
-              <Typography fontSize='1.7rem' fontWeight='bold'>
-                B2С сайт - юзер экспириенс
-              </Typography>
-              <Typography fontSize='1.5rem' mt={4}>
-                Философия вашего бренда должная отражаться в каждом эелементе
-                вашего сайта, ваши покупатели хотят притронутся к глубокому миру
-                вашего продукта.
-                <br />
-                <br />
-                При переносе вашей философии в сайт, важно следить за удобством
-                пользования того, что создали
-              </Typography>
-
-              <Box
-                sx={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  mt: '100px',
-                  mb: '100px',
-                }}
-              >
-                <OrderBtn />
-              </Box>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    mt: '100px',
+                    mb: '100px',
+                  }}
+                >
+                  <OrderBtn />
+                </Box>
+              </Grid>
             </Grid>
-          </Grid>
-        </ContentContainer>
-        <Round deg={90} sx={{ position: 'absolute', top: 0, left: '60%' }} />
-        <Round
-          deg={180}
-          sx={{
-            position: 'absolute',
-            bottom: { xs: -300, md: -400 },
-            left: { xs: '-400px', lg: '20%' },
-          }}
-        />
+          </ContentContainer>
+          <Round
+            className='round-animation'
+            deg={90}
+            sx={{
+              position: 'absolute',
+              top: 0,
+              left: { xs: '50%', md: '60%' },
+            }}
+            threshold='0.4'
+          />
+          <Round
+            className='round-animation'
+            deg={180}
+            sx={{
+              position: 'absolute',
+              bottom: { xs: -300, md: -400 },
+              left: { xs: '-200px', sm: '-400px', lg: '20%' },
+            }}
+            threshold='0.2'
+          />
+        </Box>
+        <Header></Header>
       </Box>
     </PageContainer>
   );

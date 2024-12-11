@@ -6,6 +6,7 @@ import { ReactComponent as Case2 } from '../assets/case2.svg';
 import { ReactComponent as Case3 } from '../assets/case3.svg';
 import case4 from '../assets/case4.png';
 import { ReactComponent as Case5 } from '../assets/case5.svg';
+import { ReactComponent as Case6 } from '../assets/case6.svg';
 import { OrderBtn } from './OrderBtn';
 import { useEffect } from 'react';
 import { ContentContainer } from '../ui/ContentContainer';
@@ -85,6 +86,16 @@ export const ProjectsPage = ({}) => {
           >
             <Case5 style={{ width: '60%', height: 'auto' }} />
           </Grid>
+
+          <Grid
+            size={{ xs: 12, md: 7 }}
+            sx={{ display: 'flex', justifyContent: 'center' }}
+          >
+            <Box sx={{ background: 'blue', width: '60%', padding: '14px' }}>
+              <Case6 style={{ width: '100%', height: 'auto' }} />
+            </Box>
+          </Grid>
+          <Grid size={{ xs: 12 }} display={{ xs: 'none', md: 'block' }}></Grid>
         </Grid>
         <Box mt={16} mb={6} display='flex' justifyContent='center'>
           <OrderBtn large={true} />

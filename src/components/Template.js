@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router';
 import { Box, styled } from '@mui/system';
 import Header from './Header';
+import { useEffect } from 'react';
 
 const TemplateContainer = styled(Box)(({ theme, iswhitebg }) => ({
   minHeight: '100vh',
@@ -14,7 +15,10 @@ const Content = styled(Box)(({ theme }) => ({
   marginBottom: '100px',
 }));
 
-const Template = ({}) => {
+const Template = ({ setFromTemplate }) => {
+  useEffect(() => {
+    setFromTemplate(true);
+  }, [setFromTemplate]);
   return (
     <>
       <TemplateContainer>

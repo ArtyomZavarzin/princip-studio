@@ -6,6 +6,7 @@ import { ProjectsPage } from './components/ProjectsPage';
 import { createTheme, ThemeProvider } from '@mui/material';
 import { ContactPage } from './components/ContactPage';
 import { ServicesPage } from './components/ServicesPage';
+import { useState } from 'react';
 
 const theme = createTheme({
   components: {
@@ -39,18 +40,22 @@ const theme = createTheme({
 });
 
 function App() {
+  const [fromTemplate, setFromTemplate] = useState(false);
   return (
     <>
       <ThemeProvider theme={theme}>
         <Routes>
-          <Route element={<Template />}>
-            <Route index element={<MainPage />} />
-            <Route path='main' element={<MainPage />} />
+          <Route element={<Template setFromTemplate={setFromTemplate} />}>
+            <Route index element={<Navigate to='main' />} />
             <Route path='cases' element={<ProjectsPage />} />
             <Route path='contact' element={<ContactPage />} />
             <Route path='services' element={<ServicesPage />} />
             <Route path='*' element={<Navigate to='/' />} />
           </Route>
+          <Route
+            path='main'
+            element={<MainPage fromTemplate={fromTemplate} />}
+          />
         </Routes>
       </ThemeProvider>
     </>

@@ -11,7 +11,7 @@ import Header from './Header';
 const PageContainer = styled(Box)(({ theme }) => ({
   overflow: 'hidden',
   overflowY: 'scroll',
-  height: '100vh',
+  height: 'var(--app-height)',
   minHeight: '-webkit-fill-available',
   'scroll-snap-type': 'y mandatory',
   scrollBehavior: 'smooth',
@@ -25,7 +25,7 @@ export const MainPage = ({ fromTemplate }) => {
           scrollSnapAlign: 'start',
           display: 'flex',
           flexDirection: 'column',
-          minHeight: '100vh',
+          minHeight: 'var(--app-height)',
         }}
       >
         <Header withLine={true} anim={!fromTemplate}></Header>
@@ -62,7 +62,7 @@ export const MainPage = ({ fromTemplate }) => {
 
       <Box
         sx={{
-          minHeight: '100vh',
+          minHeight: 'var(--app-height)',
           display: 'flex',
           justifyContent: 'center',
           flexDirection: 'column',

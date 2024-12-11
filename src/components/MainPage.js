@@ -34,6 +34,8 @@ export const MainPage = ({ fromTemplate }) => {
             display: 'flex',
             justifyContent: 'center',
             flexDirection: 'column',
+            paddingTop: 8,
+            paddingBottom: 8,
           }}
         >
           <Grid
@@ -83,6 +85,7 @@ export const MainPage = ({ fromTemplate }) => {
             rowSpacing={{ xs: 12 }}
             columnSpacing={{ xs: 2, md: 5, xl: 30 }}
             mt={8}
+            mb={8}
           >
             <Grid size={{ xs: 8, lg: 6 }}>
               <Typography fontSize='1.5rem'>

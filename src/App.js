@@ -18,6 +18,7 @@ const theme = createTheme({
         }
         body {
           min-height: var(--app-height);
+          min-height: -webkit-fill-available;;
         }
       `,
     },
@@ -42,13 +43,13 @@ const theme = createTheme({
 function App() {
   const [fromTemplate, setFromTemplate] = useState(false);
   useEffect(() => {
-    // const appHeight = () => {
-    //   const doc = document.documentElement;
-    //   doc.style.setProperty('--app-height', `${window.innerHeight}px`);
-    // };
-    // window.addEventListener('resize', appHeight);
-    // appHeight();
-    // return () => window.removeEventListener('resize', appHeight);
+    const appHeight = () => {
+      const doc = document.documentElement;
+      doc.style.setProperty('--app-height', `${window.innerHeight}px`);
+    };
+    window.addEventListener('resize', appHeight);
+    appHeight();
+    return () => window.removeEventListener('resize', appHeight);
   }, []);
   return (
     <>

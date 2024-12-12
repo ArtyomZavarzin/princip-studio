@@ -22,8 +22,7 @@ const PageContainer = styled(Box)(({ theme }) => ({
   // overflowY: 'scroll',
   height: 'var(--app-height)',
   minHeight: '-webkit-fill-available',
-  'scroll-snap-type': 'y mandatory',
-  scrollBehavior: 'smooth',
+  overflow: 'hidden',
 }));
 
 export const MainPage = ({ fromTemplate }) => {

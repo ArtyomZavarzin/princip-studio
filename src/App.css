@@ -22,6 +22,7 @@ html {
 body {
   /* min-height: 100vh; */
   min-height: var(--app-height);
+  min-height: -webkit-fill-available;
 }
 
 @keyframes textChange {

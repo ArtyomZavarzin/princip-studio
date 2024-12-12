@@ -17,7 +17,7 @@ const theme = createTheme({
           font-family: "Inter", "Roboto", "Helvetica", "Arial", sans-serif;
         }
         body {
-          min-height: 100vh;
+          min-height: var(--app-height);
         }
       `,
     },

@@ -4,7 +4,7 @@ import Header from './Header';
 import { useEffect } from 'react';
 
 const TemplateContainer = styled(Box)(({ theme, iswhitebg }) => ({
-  minHeight: '100vh',
+  minHeight: 'var(--app-height)',
   position: 'relative',
   display: 'flex',
   flexDirection: 'column',

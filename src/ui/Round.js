@@ -36,7 +36,7 @@ const Wrapper = styled(Box)(({ theme, deg = 0 }) => ({
 export const Round = ({
   className = '',
   deg = 0,
-  threshold = '0.5',
+  threshold = '0.2',
   ...other
 }) => {
   const [ref, inView] = useInView({

@@ -46,8 +46,11 @@ export const ProjectsPage = ({}) => {
           >
             <img
               src={case1}
-              style={{ width: '60%', height: 'auto' }}
+              style={{ width: '60%', height: 'auto', cursor: 'pointer' }}
               alt='case 1'
+              onClick={() =>
+                window.open('https://properly-nutrition.com', '_blank').focus()
+              }
             />
           </Grid>
 
@@ -73,8 +76,9 @@ export const ProjectsPage = ({}) => {
           >
             <img
               src={case4}
-              style={{ width: '60%', height: 'auto' }}
+              style={{ width: '60%', height: 'auto', cursor: 'pointer' }}
               alt='case 1'
+              onClick={() => window.open('https://tgkn.ru', '_blank').focus()}
             />
           </Grid>
           <Grid size={{ xs: 12 }} display={{ xs: 'none', md: 'block' }}></Grid>
@@ -91,7 +95,17 @@ export const ProjectsPage = ({}) => {
             size={{ xs: 12, md: 7 }}
             sx={{ display: 'flex', justifyContent: 'center' }}
           >
-            <Box sx={{ background: 'blue', width: '60%', padding: '14px' }}>
+            <Box
+              sx={{
+                background: 'blue',
+                width: '60%',
+                padding: '14px',
+                cursor: 'pointer',
+              }}
+              onClick={() =>
+                window.open('https://swoove.com', '_blank').focus()
+              }
+            >
               <Case6 style={{ width: '100%', height: 'auto' }} />
             </Box>
           </Grid>
